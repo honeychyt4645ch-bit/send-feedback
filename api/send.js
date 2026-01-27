@@ -1,4 +1,9 @@
 export default async function handler(req, res) {
+    // اگر کوئی براؤزر میں کھولے (GET ریکوسٹ)
+    if (req.method === 'GET') {
+        return res.status(200).send("API is running... Please send a POST request.");
+    }
+
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method not allowed' });
     }
@@ -10,8 +15,7 @@ export default async function handler(req, res) {
         const CHAT_ID = "7476240210";
         const telegramUrl = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
         
-        // ایموجیز ختم کر دیے اور فارمیٹ کو پروفیشنل بنا دیا
-        // \n کا مطلب نئی لائن ہے
+        // بالکل صاف ستھرا پروفیشنل ٹیکسٹ
         const text = `*New Feedback Received*\n\n*From:* ${userName || 'Guest'}\n*Details:*\n${message}`;
 
         const response = await fetch(telegramUrl, {
