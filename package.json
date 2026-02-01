@@ -1,4 +1,9 @@
 {
   "name": "telegram-feedback-api",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "description": "Feedback system for Jieshuo",
+  "main": "api/send.js",
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  }
 }
