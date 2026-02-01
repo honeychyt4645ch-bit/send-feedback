@@ -1,9 +1,34 @@
 {
   "version": 2,
+  "name": "hanzla-telegram-bot",
+  "builds": [
+    {
+      "src": "api/send.js",
+      "use": "@vercel/node"
+    }
+  ],
   "routes": [
     {
       "src": "/api/send",
-      "dest": "/api/send.js"
+      "dest": "api/send.js",
+      "methods": ["POST", "OPTIONS"]
+    }
+  ]
+}
+{
+  "version": 2,
+  "name": "hanzla-telegram-bot",
+  "builds": [
+    {
+      "src": "api/send.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/send",
+      "dest": "api/send.js",
+      "methods": ["POST", "OPTIONS"]
     }
   ]
 }
